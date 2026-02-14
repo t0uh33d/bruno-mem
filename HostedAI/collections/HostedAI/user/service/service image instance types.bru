@@ -1,0 +1,30 @@
+meta {
+  name: service image instance types
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/service/opts/instance-types?service_type={{service_type}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  service_type: {{service_type}}
+  ~service_type[eqstr]: cpu_gpu_card
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  // // const response = pm.response.text()['token'];
+  // // pm.environment.set('token', response);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

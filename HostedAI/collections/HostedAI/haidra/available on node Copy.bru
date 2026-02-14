@@ -1,0 +1,24 @@
+meta {
+  name: available on node Copy
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8000/validate_subscription?pool_name={{pool_name}}&num_vgpus=1&per_pod_ram_mb=2048&per_pod_storage_mb=10240&per_pod_cpu_cores=2.0
+  body: none
+  auth: inherit
+}
+
+params:query {
+  pool_name: {{pool_name}}
+  num_vgpus: 1
+  per_pod_ram_mb: 2048
+  per_pod_storage_mb: 10240
+  per_pod_cpu_cores: 2.0
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

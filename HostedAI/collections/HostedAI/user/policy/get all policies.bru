@@ -1,0 +1,28 @@
+meta {
+  name: get all policies
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/policy/{{policy_type}}?per_page=10&page=0&sort=name&order=asc
+  body: none
+  auth: bearer
+}
+
+params:query {
+  per_page: 10
+  page: 0
+  sort: name
+  order: asc
+  ~name[peqstr]: snatch
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

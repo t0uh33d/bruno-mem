@@ -1,0 +1,36 @@
+meta {
+  name: get instances under service paginated
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/service/{{service_id}}/instances?per_page=10&page=0&search=i-2d0f36cb-0ddc-43a0-8c85-6e1be28d7b23
+  body: json
+  auth: bearer
+}
+
+params:query {
+  per_page: 10
+  page: 0
+  search: i-2d0f36cb-0ddc-43a0-8c85-6e1be28d7b23
+  ~sort: created_at
+  ~order: desc
+  ~name[eqstr]: cPanel
+  ~service_type[eqstr]: cpu_gpu_card
+  ~team_id[eqstr]: 860e3945-c8b8-45b4-a6c8-c4cc10918c0a
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  // // const response = pm.response.text()['token'];
+  // // pm.environment.set('token', response);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

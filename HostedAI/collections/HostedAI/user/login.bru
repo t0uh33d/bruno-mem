@@ -1,7 +1,7 @@
 meta {
   name: login
   type: http
-  seq: 2
+  seq: 1
 }
 
 post {
@@ -12,19 +12,17 @@ post {
 
 body:json {
   {
-     "email":"huzaif2@codewave.com",
-     "password":"hostedai"
+     "email" : "hostedai@hosted.ai",
+     "password":"{{userPassword}}"
    }
-  
   
   
 }
 
 script:post-response {
-  // const res = pm.response['token'];
-  const token = res.token;
-  bru.setEnvVar('token', token);
-  console.log(token);
+  const response = res.getBody().token;
+  bru.setGlobalEnvVar('token', response);
+  
 }
 
 settings {

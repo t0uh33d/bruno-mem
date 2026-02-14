@@ -1,0 +1,29 @@
+meta {
+  name: update a storage block
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{url}}/storage-blocks/58d35894-cdf4-4a89-8d8a-2aaed31953b7
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "id": "58d35894-cdf4-4a89-8d8a-2aaed31953b7",
+      "name": "Block 3000-max",
+      "description": "Maximum block size for large-scale applications with intensive data storage requirements.",
+      "size_in_gb": 3800
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

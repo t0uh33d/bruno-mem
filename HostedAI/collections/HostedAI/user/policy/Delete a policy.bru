@@ -1,0 +1,33 @@
+meta {
+  name: Delete a policy
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{url}}/policy/{{policy_type}}/5385032a-78d0-4b10-8aa8-0289306d3b61
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+      {
+              "id": "b7e58d40-a0c2-43dc-863b-544c4b674260",
+              "name": "Ab",
+              "description": "System Defined flavor templates",
+              "type": "flavor",
+              "is_default": false,
+              "is_system_defined": false,
+              "number_of_objects": 0,
+              "number_of_teams": 0
+          }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

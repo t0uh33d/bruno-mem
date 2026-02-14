@@ -1,0 +1,16 @@
+meta {
+  name: allocatable on node
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8000/allocatable/{{pool_name}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

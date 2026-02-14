@@ -1,0 +1,39 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{adminURL}}/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+     "username" : "hosted_ai",
+     "password":"{{adminPassword}}"
+   }
+  
+  // {
+  //     "email" :"sandy@codewave.com",
+  //     "password":"Sandip@123"
+  // }
+}
+
+vars:pre-request {
+  adminURL: https://admin14.hostedai.dev/api
+  adminPassword: WBK8c7k3j9RC
+}
+
+script:post-response {
+  const response = res.getBody().token;
+  bru.setEnvVar('adminToken', response);
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

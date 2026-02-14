@@ -1,0 +1,48 @@
+meta {
+  name: shared volume pod
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{adminURL}}/pods/volume
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~requested_gpu_count: 1
+  ~model_id: 0x1e13
+  ~pool_id: 3
+  ~image_hash: 37191266f9cad5651a92a4b56d8a03bb072bb27d768663e0fc9b6c7ecdfa0a11
+  ~instance_type: 3821e2f0-1830-4787-9570-f3d91bfc396a
+  ~storage_block_id: 3821e2f0-1830-4787-9570-f3d91bfc396a
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "action" : "attach_volume",
+      "team_name" : "{{team_id}}",
+      "worker_id" : "{{worker_id}}",
+      "pool_id" : {{pool_id}},
+      "volumes" : [
+          {
+              "name" : "share16",
+              "mount_path" : "/data/share16"
+          },
+          {
+              "name" : "share17",
+              "mount_path" : "/data/share17"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

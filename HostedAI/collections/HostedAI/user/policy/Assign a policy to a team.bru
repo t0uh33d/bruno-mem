@@ -1,0 +1,27 @@
+meta {
+  name: Assign a policy to a team
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{url}}/policy/{{policy_type}}/assign-team
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "team_id" : "bdf8f64d-4b90-474e-b46e-d71d98373d52",
+      "policy_id" : "26738e01-a85f-4872-a46f-7a9da3667d0a"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Get all object available based on team id
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/policy/{{policy_type}}/team/fc129cc6-5645-4492-a841-030b1be2321f/objects
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "team_id" : "fc129cc6-5645-4492-a841-030b1be2321f",
+      "template_id" : "74237e11-4832-4690-82a7-06f84b76453d"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

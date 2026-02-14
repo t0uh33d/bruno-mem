@@ -1,0 +1,25 @@
+meta {
+  name: allocatable for vGPUs
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8000/allocatable_resources_vgpus/{{pool_name}}?num_vgpus=9&node_requirements=hai:5&node_requirements=node1:4
+  body: none
+  auth: inherit
+}
+
+params:query {
+  num_vgpus: 9
+  node_requirements: hai:5
+  node_requirements: node1:4
+  ~min_ram_mb: 1
+  ~min_cpu_cores: 1
+  ~min_storage_mb: 1
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

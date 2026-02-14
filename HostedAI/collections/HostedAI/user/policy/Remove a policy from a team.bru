@@ -1,0 +1,27 @@
+meta {
+  name: Remove a policy from a team
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/policy/{{policy_type}}/unassign-team
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "team_id" : "fc129cc6-5645-4492-a841-030b1be2321f",
+      "policy_id" : "5385032a-78d0-4b10-8aa8-0289306d3b61"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

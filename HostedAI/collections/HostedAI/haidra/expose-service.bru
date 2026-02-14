@@ -1,0 +1,36 @@
+meta {
+  name: expose-service
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8000/expose-service
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "pod_name": "i-8415b0ad-bbde-4364-be9f-b3764d4993d7",
+      "service_name": "my-service-1",
+      "pod_port": 8080,
+      "team_id": "{{team_id}}",
+      "protocol": "TCP"
+  }
+}
+
+script:post-response {
+  const response = res.getBody().operation_id;
+  bru.setEnvVar('operation_id', response);
+  
+  const requestBody = JSON.parse(req.getBody().raw);
+  bru.setEnvVar('service_name', requestBody.service_name);
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
