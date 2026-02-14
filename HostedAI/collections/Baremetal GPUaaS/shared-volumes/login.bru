@@ -1,0 +1,31 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+  //    "email":"touheed3@codewave.com",
+     "email" : "hostedai@hosted.ai",
+     "password":"{{userPassword}}"
+   }
+  
+  
+}
+
+script:post-response {
+  const response = res.getBody().token;
+  bru.setEnvVar('token', response);
+  
+}
+
+settings {
+  encodeUrl: true
+}

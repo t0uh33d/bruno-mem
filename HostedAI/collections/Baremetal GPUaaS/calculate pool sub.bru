@@ -1,0 +1,70 @@
+meta {
+  name: calculate pool sub
+  type: http
+  seq: 23
+}
+
+post {
+  url: {{url}}/gpuaas/calculate-pool-subscription
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPUkt5VHZoN3ZIcEZuNmQ1d3FNSFVsMkNDbUVzcDY0ck1VVUhvMjJ4MGFrIn0.eyJleHAiOjE3NjA1MTI4NDYsImlhdCI6MTc2MDQyNjQ0NiwianRpIjoiNmU2NmRhM2YtNzEyMi00MDJhLThjMzQtNTIyY2ZiYjcyODk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9ob3N0ZWRhaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0ODk1ODZjMC03YWJmLTRkYzUtODg3YS03NGYzMWVhM2JhMTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJob3N0ZWRhaS11c2VycGFuZWwtY2xpZW50Iiwic2lkIjoiMDUyZTcxNzktMzhhNC00YTdmLTkxM2UtODExYmQ2MWVhNGE2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtaG9zdGVkYWkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImRlZmF1bHQgYWRtaW4gdXNlciBkZWZhdWx0IGFkbWluIHVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3N0ZWRhaUBob3N0ZWQuYWkiLCJnaXZlbl9uYW1lIjoiZGVmYXVsdCBhZG1pbiB1c2VyIiwiZmFtaWx5X25hbWUiOiJkZWZhdWx0IGFkbWluIHVzZXIiLCJlbWFpbCI6Imhvc3RlZGFpQGhvc3RlZC5haSJ9.WltvjTYaepE9lh4n14TKAYEtzegJVLKTb2Bl0-PIYDarthx6rU9MBmS8u1aEP9F3Zio8edJ44K0y7k9ie8-_ySmlpAEH1ZfMrzhZgvpG4eA8l_pLt4ff0QNEzMpjWUNg7knXvNyqwcz2fVUU14l_L9wXkNw1YKQjr-dXRO8-BNNKfnwpRK6qvYup8IOWlU2P1_Q1VSnuF-cZfyXI5jDw6ewowgwrafMDBVRvxZKyXYAmtaI602tCeoS7xoQTvVbUcZu2L-mekk05BiYOhl9-1Pf6ykae2Q-yBLUAKBPJawIxBT6S8Mudbzcy3dgTvVQP-i6wC1kU8euFHtSSqpHN1A
+  Connection: keep-alive
+  Content-Type: application/json
+  Origin: https://user14.hostedai.dev
+  Referer: https://user14.hostedai.dev/teams/19313392-6a70-46b8-97e7-8ab799cd9a1c/gpuaas
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+  sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "macOS"
+  Cookie: token="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPUkt5VHZoN3ZIcEZuNmQ1d3FNSFVsMkNDbUVzcDY0ck1VVUhvMjJ4MGFrIn0.eyJleHAiOjE3NjA1MTI4NDYsImlhdCI6MTc2MDQyNjQ0NiwianRpIjoiNmU2NmRhM2YtNzEyMi00MDJhLThjMzQtNTIyY2ZiYjcyODk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9ob3N0ZWRhaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0ODk1ODZjMC03YWJmLTRkYzUtODg3YS03NGYzMWVhM2JhMTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJob3N0ZWRhaS11c2VycGFuZWwtY2xpZW50Iiwic2lkIjoiMDUyZTcxNzktMzhhNC00YTdmLTkxM2UtODExYmQ2MWVhNGE2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtaG9zdGVkYWkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImRlZmF1bHQgYWRtaW4gdXNlciBkZWZhdWx0IGFkbWluIHVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3N0ZWRhaUBob3N0ZWQuYWkiLCJnaXZlbl9uYW1lIjoiZGVmYXVsdCBhZG1pbiB1c2VyIiwiZmFtaWx5X25hbWUiOiJkZWZhdWx0IGFkbWluIHVzZXIiLCJlbWFpbCI6Imhvc3RlZGFpQGhvc3RlZC5haSJ9.WltvjTYaepE9lh4n14TKAYEtzegJVLKTb2Bl0-PIYDarthx6rU9MBmS8u1aEP9F3Zio8edJ44K0y7k9ie8-_ySmlpAEH1ZfMrzhZgvpG4eA8l_pLt4ff0QNEzMpjWUNg7knXvNyqwcz2fVUU14l_L9wXkNw1YKQjr-dXRO8-BNNKfnwpRK6qvYup8IOWlU2P1_Q1VSnuF-cZfyXI5jDw6ewowgwrafMDBVRvxZKyXYAmtaI602tCeoS7xoQTvVbUcZu2L-mekk05BiYOhl9-1Pf6ykae2Q-yBLUAKBPJawIxBT6S8Mudbzcy3dgTvVQP-i6wC1kU8euFHtSSqpHN1A"
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "total_cost_per_hour": 0,
+      "no_of_gpus": 9,
+      "guaranteed_sharing": 0,
+      "pool_id": 84,
+      "team_id": "{{team_id}}",
+      "ephemeral_storage_block_id": "81bab15f-af0a-4f4c-ab5e-a4d237df883d",
+      "shared_volumes": [],
+       "ifb_subscription_id": "0f11c29a-cf69-40e9-9488-fbe4ca80864f"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl 'https://user14.hostedai.dev/api/gpuaas/calculate-pool-subscription' \
+    -H 'Accept: application/json, text/plain, */*' \
+    -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPUkt5VHZoN3ZIcEZuNmQ1d3FNSFVsMkNDbUVzcDY0ck1VVUhvMjJ4MGFrIn0.eyJleHAiOjE3NjA1MTI4NDYsImlhdCI6MTc2MDQyNjQ0NiwianRpIjoiNmU2NmRhM2YtNzEyMi00MDJhLThjMzQtNTIyY2ZiYjcyODk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9ob3N0ZWRhaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0ODk1ODZjMC03YWJmLTRkYzUtODg3YS03NGYzMWVhM2JhMTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJob3N0ZWRhaS11c2VycGFuZWwtY2xpZW50Iiwic2lkIjoiMDUyZTcxNzktMzhhNC00YTdmLTkxM2UtODExYmQ2MWVhNGE2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtaG9zdGVkYWkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImRlZmF1bHQgYWRtaW4gdXNlciBkZWZhdWx0IGFkbWluIHVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3N0ZWRhaUBob3N0ZWQuYWkiLCJnaXZlbl9uYW1lIjoiZGVmYXVsdCBhZG1pbiB1c2VyIiwiZmFtaWx5X25hbWUiOiJkZWZhdWx0IGFkbWluIHVzZXIiLCJlbWFpbCI6Imhvc3RlZGFpQGhvc3RlZC5haSJ9.WltvjTYaepE9lh4n14TKAYEtzegJVLKTb2Bl0-PIYDarthx6rU9MBmS8u1aEP9F3Zio8edJ44K0y7k9ie8-_ySmlpAEH1ZfMrzhZgvpG4eA8l_pLt4ff0QNEzMpjWUNg7knXvNyqwcz2fVUU14l_L9wXkNw1YKQjr-dXRO8-BNNKfnwpRK6qvYup8IOWlU2P1_Q1VSnuF-cZfyXI5jDw6ewowgwrafMDBVRvxZKyXYAmtaI602tCeoS7xoQTvVbUcZu2L-mekk05BiYOhl9-1Pf6ykae2Q-yBLUAKBPJawIxBT6S8Mudbzcy3dgTvVQP-i6wC1kU8euFHtSSqpHN1A' \
+    -H 'Connection: keep-alive' \
+    -H 'Content-Type: application/json' \
+    -b 'token="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPUkt5VHZoN3ZIcEZuNmQ1d3FNSFVsMkNDbUVzcDY0ck1VVUhvMjJ4MGFrIn0.eyJleHAiOjE3NjA1MTI4NDYsImlhdCI6MTc2MDQyNjQ0NiwianRpIjoiNmU2NmRhM2YtNzEyMi00MDJhLThjMzQtNTIyY2ZiYjcyODk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9ob3N0ZWRhaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0ODk1ODZjMC03YWJmLTRkYzUtODg3YS03NGYzMWVhM2JhMTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJob3N0ZWRhaS11c2VycGFuZWwtY2xpZW50Iiwic2lkIjoiMDUyZTcxNzktMzhhNC00YTdmLTkxM2UtODExYmQ2MWVhNGE2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtaG9zdGVkYWkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6ImRlZmF1bHQgYWRtaW4gdXNlciBkZWZhdWx0IGFkbWluIHVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3N0ZWRhaUBob3N0ZWQuYWkiLCJnaXZlbl9uYW1lIjoiZGVmYXVsdCBhZG1pbiB1c2VyIiwiZmFtaWx5X25hbWUiOiJkZWZhdWx0IGFkbWluIHVzZXIiLCJlbWFpbCI6Imhvc3RlZGFpQGhvc3RlZC5haSJ9.WltvjTYaepE9lh4n14TKAYEtzegJVLKTb2Bl0-PIYDarthx6rU9MBmS8u1aEP9F3Zio8edJ44K0y7k9ie8-_ySmlpAEH1ZfMrzhZgvpG4eA8l_pLt4ff0QNEzMpjWUNg7knXvNyqwcz2fVUU14l_L9wXkNw1YKQjr-dXRO8-BNNKfnwpRK6qvYup8IOWlU2P1_Q1VSnuF-cZfyXI5jDw6ewowgwrafMDBVRvxZKyXYAmtaI602tCeoS7xoQTvVbUcZu2L-mekk05BiYOhl9-1Pf6ykae2Q-yBLUAKBPJawIxBT6S8Mudbzcy3dgTvVQP-i6wC1kU8euFHtSSqpHN1A"' \
+    -H 'Origin: https://user14.hostedai.dev' \
+    -H 'Referer: https://user14.hostedai.dev/teams/19313392-6a70-46b8-97e7-8ab799cd9a1c/gpuaas' \
+    -H 'Sec-Fetch-Dest: empty' \
+    -H 'Sec-Fetch-Mode: cors' \
+    -H 'Sec-Fetch-Site: same-origin' \
+    -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    -H 'sec-ch-ua-platform: "macOS"' \
+    --data-raw '{"total_cost_per_hour":0,"no_of_gpus":2,"guaranteed_sharing":0,"pool_id":84,"team_id":"19313392-6a70-46b8-97e7-8ab799cd9a1c","ephemeral_storage_block_id":"81bab15f-af0a-4f4c-ab5e-a4d237df883d","shared_volumes":[]}'
+}

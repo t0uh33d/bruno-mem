@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "HostedAI"
+  type: workspace
+
+collections:
+  - name: "Baremetal GPUaaS"
+    path: "collections/Baremetal GPUaaS"
+
+specs:
+
+docs: ''
