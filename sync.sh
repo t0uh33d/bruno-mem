@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROJECT=$1
-CONF_FILE="$(cd "$(dirname "$0")/.." && pwd)/sync.json"
+PROJECT=${1:-}
+DIRECTION=${2:-}
+CONF_FILE="$(pwd)/sync.json"
 
-if [[ -z "${PROJECT:-}" ]]; then
-  echo "❌ Usage: sync.sh <project-name>"
+if [[ -z "$PROJECT" || -z "$DIRECTION" ]]; then
+  echo "❌ Usage: ./sync.sh <project> <push|pull>"
   exit 1
 fi
 
-if [[ ! -f "$CONF_FILE" ]]; then
-  echo "❌ Config not found: sync.json"
+if [[ "$DIRECTION" != "push" && "$DIRECTION" != "pull" ]]; then
+  echo "❌ Direction must be 'push' or 'pull'"
   exit 1
 fi
 
@@ -21,13 +22,22 @@ if [[ -z "$ENTRIES" ]]; then
   exit 1
 fi
 
-echo "🔄 Syncing project: $PROJECT"
+echo "🔄 Project: $PROJECT"
+echo "➡️  Mode   : $DIRECTION"
 echo
 
 echo "$ENTRIES" | while read -r entry; do
   NAME=$(jq -r '.name' <<< "$entry")
-  SRC=$(jq -r '.source' <<< "$entry")
-  DEST=$(jq -r '.dest' <<< "$entry")
+  MASTER=$(jq -r '.master' <<< "$entry")
+  PROJECT_DIR=$(jq -r '.project' <<< "$entry")
+
+  if [[ "$DIRECTION" == "push" ]]; then
+    SRC="$MASTER"
+    DEST="$PROJECT_DIR"
+  else
+    SRC="$PROJECT_DIR"
+    DEST="$MASTER"
+  fi
 
   if [[ ! -d "$SRC" ]]; then
     echo "⚠️  [$NAME] Source missing: $SRC"
@@ -43,5 +53,5 @@ echo "$ENTRIES" | while read -r entry; do
   echo
 done
 
-echo "✅ Sync complete for $PROJECT"
+echo "✅ Sync complete"
 

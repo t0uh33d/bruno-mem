@@ -2,11 +2,10 @@
   "projects": {
     "HOF": [
       {
-        "name": "auth",
-        "source": "/Users/codewave/Desktop/projects/bruno-mem/HOF",
-        "dest": "/Users/codewave/Desktop/projects/euklid/football-backend/bruno-mem"
+        "name": "all",
+        "master": "/Users/codewave/Desktop/projects/bruno-mem/HOF",
+        "project": "/Users/codewave/Desktop/projects/euklid/football-backend/bruno-mem"
       }
     ]
   }
 }
-
