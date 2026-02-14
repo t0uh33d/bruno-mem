@@ -1,0 +1,15 @@
+meta {
+  name: available on node
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8000/available/{{pool_name}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Assign a service to scenario
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/scenario/assign-service
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "scenario_id": "05457d6e-6753-42e7-994f-8b25f1250b2c",
+      "service_id": "437577c3-9436-45f0-834b-1c5bc977d1b9"
+  }
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

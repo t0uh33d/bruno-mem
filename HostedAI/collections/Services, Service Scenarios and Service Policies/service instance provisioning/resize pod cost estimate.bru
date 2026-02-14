@@ -1,0 +1,29 @@
+meta {
+  name: resize pod cost estimate
+  type: http
+  seq: 32
+}
+
+get {
+  url: http://?team_id=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "target_instance_type_id" : "6765412d-e116-401b-b8a0-fc7532a22286"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

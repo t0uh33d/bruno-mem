@@ -1,0 +1,26 @@
+meta {
+  name: create a policy
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/policy/{{policy_type}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name" : "Role policy test 2",
+      "description" : "This is a policy"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

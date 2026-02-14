@@ -1,0 +1,32 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+     "email":"huzaif2@codewave.com",
+     "password":"hostedai"
+   }
+  
+  
+  
+}
+
+script:post-response {
+  // const res = pm.response['token'];
+  const token = res.token;
+  bru.setEnvVar('token', token);
+  console.log(token);
+}
+
+settings {
+  encodeUrl: true
+}

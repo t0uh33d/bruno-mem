@@ -1,0 +1,58 @@
+meta {
+  name: /gpu/metrics/{id}
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminURL}}/gpu/metrics/GPU-aded75c0-8e85-257f-8aef-7da49e7bdb80?time_grouping=24 HOUR
+  body: none
+  auth: inherit
+}
+
+params:query {
+  time_grouping: 24 HOUR
+}
+
+headers {
+  Accept: */*
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJ7XCJUb2tlblwiOlwiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SlZjMlZ5U1dRaU9qRjkuVmNwMmdyWjUzdF9PRzNqd1NYc1J3ZmNfVVVqYm9OZ1phcmtBR2lYMGpnTVwiLFwiVXNlcklEXCI6XCIxXCIsXCJVc2VybmFtZVwiOlwiaG9zdGVkX2FpXCIsXCJQcm9qZWN0SURcIjpcIlwiLFwiUm9sZUlEXCI6XCJhZG1pblwiLFwiUmVxdWVzdElEXCI6XCJyZXEtMmQyM2Q4ZTYtZTBlMC00ZWRlLTgxMTktMTk2YjZjZTE3ZDViXCIsXCJFeHBpcmVzQXRcIjpcIjIwMjUtMDctMDdUMTk6MzE6MDAuNjg2NTQ5OTUyWlwifSIsImV4cCI6MTc1MTkxNjY2MH0.k6mvgx6efUJEwGP6ppMAbS7qzqPiiFPKHibQUjIshP4
+  Cache-Control: no-cache
+  Connection: keep-alive
+  Content-Type: application/json
+  Pragma: no-cache
+  Referer: https://admin14.hostedai.dev/gpuaas/gpu/GPU-aded75c0-8e85-257f-8aef-7da49e7bdb80
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+  sec-ch-ua: "Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "macOS"
+  ~Cookie: sim2_session=MTc1MTkxMzA2MHxEWDhFQVFMX2dBQUJFQUVRQUFELUFTX19nQUFCQm5OMGNtbHVad3dJQUFaamJHbGxiblFHYzNSeWFXNW5EUDRCRHdELUFRdDdJbFJ2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBKVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbzVMbVY1U2xaak1sWjVVMWRSYVU5cVJqa3VWbU53TW1keVdqVXpkRjlQUnpOcWQxTlljMUozWm1OZlZWVnFZbTlPWjFwaGNtdEJSMmxZTUdwblRTSXNJbFZ6WlhKSlJDSTZJakVpTENKVmMyVnlibUZ0WlNJNkltaHZjM1JsWkY5aGFTSXNJbEJ5YjJwbFkzUkpSQ0k2SWlJc0lsSnZiR1ZKUkNJNkltRmtiV2x1SWl3aVVtVnhkV1Z6ZEVsRUlqb2ljbVZ4TFRKa01qTmtPR1UyTFdVd1pUQXROR1ZrWlMwNE1URTVMVEU1Tm1JMlkyVXhOMlExWWlJc0lrVjRjR2x5WlhOQmRDSTZJakF3TURFdE1ERXRNREZVTURBNk1EQTZNREJhSW4wPXyaTRU9GjmYsfbGWmRmZ5coW0aPIqHdYbquTbWaxdQF3w==
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl 'https://admin14.hostedai.dev/api/gpu/metrics/GPU-aded75c0-8e85-257f-8aef-7da49e7bdb80?time_grouping=2+WEEK' \
+    -H 'Accept: */*' \
+    -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJ7XCJUb2tlblwiOlwiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SlZjMlZ5U1dRaU9qRjkuVmNwMmdyWjUzdF9PRzNqd1NYc1J3ZmNfVVVqYm9OZ1phcmtBR2lYMGpnTVwiLFwiVXNlcklEXCI6XCIxXCIsXCJVc2VybmFtZVwiOlwiaG9zdGVkX2FpXCIsXCJQcm9qZWN0SURcIjpcIlwiLFwiUm9sZUlEXCI6XCJhZG1pblwiLFwiUmVxdWVzdElEXCI6XCJyZXEtMmQyM2Q4ZTYtZTBlMC00ZWRlLTgxMTktMTk2YjZjZTE3ZDViXCIsXCJFeHBpcmVzQXRcIjpcIjIwMjUtMDctMDdUMTk6MzE6MDAuNjg2NTQ5OTUyWlwifSIsImV4cCI6MTc1MTkxNjY2MH0.k6mvgx6efUJEwGP6ppMAbS7qzqPiiFPKHibQUjIshP4' \
+    -H 'Cache-Control: no-cache' \
+    -H 'Connection: keep-alive' \
+    -H 'Content-Type: application/json' \
+    -b 'sim2_session=MTc1MTkxMzA2MHxEWDhFQVFMX2dBQUJFQUVRQUFELUFTX19nQUFCQm5OMGNtbHVad3dJQUFaamJHbGxiblFHYzNSeWFXNW5EUDRCRHdELUFRdDdJbFJ2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBKVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbzVMbVY1U2xaak1sWjVVMWRSYVU5cVJqa3VWbU53TW1keVdqVXpkRjlQUnpOcWQxTlljMUozWm1OZlZWVnFZbTlPWjFwaGNtdEJSMmxZTUdwblRTSXNJbFZ6WlhKSlJDSTZJakVpTENKVmMyVnlibUZ0WlNJNkltaHZjM1JsWkY5aGFTSXNJbEJ5YjJwbFkzUkpSQ0k2SWlJc0lsSnZiR1ZKUkNJNkltRmtiV2x1SWl3aVVtVnhkV1Z6ZEVsRUlqb2ljbVZ4TFRKa01qTmtPR1UyTFdVd1pUQXROR1ZrWlMwNE1URTVMVEU1Tm1JMlkyVXhOMlExWWlJc0lrVjRjR2x5WlhOQmRDSTZJakF3TURFdE1ERXRNREZVTURBNk1EQTZNREJhSW4wPXyaTRU9GjmYsfbGWmRmZ5coW0aPIqHdYbquTbWaxdQF3w==' \
+    -H 'Pragma: no-cache' \
+    -H 'Referer: https://admin14.hostedai.dev/gpuaas/gpu/GPU-aded75c0-8e85-257f-8aef-7da49e7bdb80' \
+    -H 'Sec-Fetch-Dest: empty' \
+    -H 'Sec-Fetch-Mode: cors' \
+    -H 'Sec-Fetch-Site: same-origin' \
+    -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    -H 'sec-ch-ua-platform: "macOS"'
+}

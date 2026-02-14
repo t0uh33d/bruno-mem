@@ -1,0 +1,33 @@
+meta {
+  name: Get all scenarios
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/scenario?name[peqstr]=gpu&per_page=10&page=0
+  body: none
+  auth: bearer
+}
+
+params:query {
+  name[peqstr]: gpu
+  per_page: 10
+  page: 0
+  ~sort: number_of_associated_services
+  ~order: asc
+  ~number_of_associated_services[gtnum]: 3
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

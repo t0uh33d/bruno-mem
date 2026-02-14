@@ -1,0 +1,42 @@
+meta {
+  name: create instance
+  type: http
+  seq: 35
+}
+
+post {
+  url: {{url}}/service/i/create-instance
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  // {
+  //     "service_id" : "{{service_id}}",
+  //     "name" : "Pod Instance",
+  //     "description" : "Pod Instance For Integration",
+  //     "workspace_id" : "{{workspace}}",
+  //     "team_id" : "{{team_id}}",
+  //     "region_id" : {{region_id}},
+  //     "image_hash" : "{{has}}",
+  //     "instance_type_id" : "{{instance_type}}",
+  //     "root_storage_type_id" : "{{storage_block}}",
+  //     "pod_opts" : {
+  //         "pool_id" : 1,
+  //         "vgpus" : 1
+  //     }
+  // }
+  {"name":"SSH KEY TEST","description":"This is a sample instance description","workspace_id":"aeaec616-8109-4141-adc3-2ba652cb0c1d","team_id":"56e5dae8-0d98-45d3-8dd1-26d602cc4f6b","region_id":1,"image_hash":"37191266f9cad5651a92a4b56d8a03bb072bb27d768663e0fc9b6c7ecdfa0a11","instance_type_id":"2f2fdc91-6885-46c7-9a00-ec047cce5888","root_storage_type_id":"52628e94-b01b-45ac-b9cb-ff279f1ef472","public_keys":["13019ef8-b03a-49a8-a6b8-5fc36a6a3755"],"service_id":"b67961f5-752d-47f1-9615-2d4ec13e1ac2","pod_opts":{"pool_id":1,"vgpus":1,"shared_volumes":[]}}
+}
+
+settings {
+  encodeUrl: true
+}

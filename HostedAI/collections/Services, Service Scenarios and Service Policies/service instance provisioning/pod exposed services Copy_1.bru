@@ -1,0 +1,25 @@
+meta {
+  name: pod exposed services Copy_1
+  type: http
+  seq: 27
+}
+
+get {
+  url: {{local}}/pods/metrics?pod_id={{worker_id}}&team_id={{team_id}}&window=all_time
+  body: none
+  auth: bearer
+}
+
+params:query {
+  pod_id: {{worker_id}}
+  team_id: {{team_id}}
+  window: all_time
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,49 @@
+meta {
+  name: Get service details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/service/i/details?service_id={{service_id}}&cluster_id={{cluster_id}}&team_id=6ba405b0-7927-4707-bee0-dc9175107f64
+  body: json
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  cluster_id: {{cluster_id}}
+  team_id: 6ba405b0-7927-4707-bee0-dc9175107f64
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name" : "cPanel",
+    "description" : "cPanel is great, please use it.",
+    "service_type" : "cpu_only",
+    "instance_config" : {
+      "default_instance_type_id" : "59cd67eb-4b3c-4948-bbbf-cd77c1ee7f2f",
+      "instance_type_locked" : true,
+      "additional_disk" : "both",
+      "compatible_distros" : ["debian"],
+      "incompatible_images": {
+        "debian" : ["",""]
+      },
+      "auto_assign_network" : "public"
+    }
+  }
+  
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

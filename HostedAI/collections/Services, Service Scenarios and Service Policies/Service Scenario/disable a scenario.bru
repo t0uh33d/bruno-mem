@@ -1,0 +1,37 @@
+meta {
+  name: disable a scenario
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/scenario/5e49f0f3-07ad-4b96-9c45-e34935492115/enable
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name": "Scenario 11",
+      "description": "description goes here",
+      "services" : [
+          {
+           "service_id" : "2257d5ea-3604-4ae4-9b39-7333d8f9aabe",
+           "order" : 1
+         }
+      ]
+  }
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

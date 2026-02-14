@@ -1,0 +1,28 @@
+meta {
+  name: tags
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{url}}/service/service-tags
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~name[eqstr]: cPanel
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

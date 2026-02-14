@@ -1,0 +1,35 @@
+meta {
+  name: toggle instance type availability
+  type: http
+  seq: 15
+}
+
+put {
+  url: {{url}}/instance-type/25d23cc6-bdd0-4466-9fae-f580e758a1b1/toggle-availability
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "id": "2b445f5b-1f37-4138-b214-1fc4244ca63a",
+      "name": "QA Instance type",
+      "description": "Suitable for very lightweight workloads or basic services.",
+      "memory_mb": 1024,
+      "vcpus": 1,
+      "in_use": false,
+      "is_available": true,
+      "default_storage_block_id": "8a370492-9bd6-462b-8009-82a641dc88f0",
+      "storage_blocks": [
+          "8a370492-9bd6-462b-8009-82a641dc88f0"
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

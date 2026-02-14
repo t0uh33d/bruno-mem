@@ -1,0 +1,23 @@
+meta {
+  name: pod exposed services
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{local}}/instances/unified/i-ce9c2b0e-3c8c-4bf5-b1e7-0c1b5bda5c02/exposed-services
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

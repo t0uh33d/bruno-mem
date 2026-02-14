@@ -1,0 +1,44 @@
+meta {
+  name: compatible-gpu-models
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/service/i/compatible-gpu-models?service_id={{service_id}}&team_id={{team_id}}&cluster_id={{cluster_id}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  team_id: {{team_id}}
+  cluster_id: {{cluster_id}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name" : "cPanel",
+    "description" : "cPanel is great, please use it.",
+    "service_type" : "cpu_only",
+    "instance_config" : {
+      "default_instance_type_id" : "59cd67eb-4b3c-4948-bbbf-cd77c1ee7f2f",
+      "instance_type_locked" : true,
+      "additional_disk" : "both",
+      "compatible_distros" : ["debian"],
+      "incompatible_images": {
+        "debian" : ["",""]
+      },
+      "auto_assign_network" : "public"
+    }
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

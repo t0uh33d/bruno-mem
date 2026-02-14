@@ -1,0 +1,28 @@
+meta {
+  name: scenario compatible services
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/service/i/scenario-compatible-services?team_id={{team_id}}&scenario_id={{scenario_id}}&offset=0&limit=3
+  body: none
+  auth: bearer
+}
+
+params:query {
+  team_id: {{team_id}}
+  scenario_id: {{scenario_id}}
+  offset: 0
+  limit: 3
+  ~service_name: Open-WebUI
+  ~service_tag: GUI
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

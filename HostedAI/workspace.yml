@@ -6,7 +6,17 @@ info:
 collections:
   - name: "Baremetal GPUaaS"
     path: "collections/Baremetal GPUaaS"
+  - name: "Services, Service Scenarios and Service Policies"
+    path: "collections/Services, Service Scenarios and Service Policies"
+  - name: "Instance Types and Storage Blocks"
+    path: "collections/Instance Types and Storage Blocks"
+  - name: "Instance Type, Service, Roles, Image Policies"
+    path: "collections/Instance Type, Service, Roles, Image Policies"
+  - name: "haiDra"
+    path: "collections/haiDra"
 
 specs:
 
 docs: ''
+
+activeEnvironmentUid: 3rvm9j000000000000000

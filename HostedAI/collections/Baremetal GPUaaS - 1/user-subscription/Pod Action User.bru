@@ -1,0 +1,72 @@
+meta {
+  name: Pod Action User
+  type: http
+  seq: 24
+}
+
+post {
+  url: {{url}}/pods/action
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Access-Control-Allow-Origin: *
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJ7XCJUb2tlblwiOlwiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SlZjMlZ5U1dRaU9qRjkuVmNwMmdyWjUzdF9PRzNqd1NYc1J3ZmNfVVVqYm9OZ1phcmtBR2lYMGpnTVwiLFwiVXNlcklEXCI6XCIxXCIsXCJVc2VybmFtZVwiOlwiaG9zdGVkX2FpXCIsXCJQcm9qZWN0SURcIjpcIlwiLFwiUm9sZUlEXCI6XCJhZG1pblwiLFwiUmVxdWVzdElEXCI6XCJyZXEtYTFlMDFjMmMtYjQ2YS00NGMwLTgzNjAtNWU1OWMwYjY3NWUzXCIsXCJFeHBpcmVzQXRcIjpcIjIwMjUtMDUtMDdUMTI6NTE6MDUuODQ0ODc5NTI3WlwifSIsImV4cCI6MTc0NjYyMjI2NX0.5jLDQetLyVjcp-hrdWT13yhu7UPK6gh5Lo9w-VAxoa4
+  Cache-Control: no-cache
+  Connection: keep-alive
+  Content-Type: application/json
+  Origin: https://admin9.hostedai.dev
+  Pragma: no-cache
+  Referer: https://admin9.hostedai.dev/app_library/27/step_builder
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+  sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "macOS"
+  ~Cookie: sim2_session=MTc0NjYxODY2NXxEWDhFQVFMX2dBQUJFQUVRQUFELUFTX19nQUFCQm5OMGNtbHVad3dJQUFaamJHbGxiblFHYzNSeWFXNW5EUDRCRHdELUFRdDdJbFJ2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBKVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbzVMbVY1U2xaak1sWjVVMWRSYVU5cVJqa3VWbU53TW1keVdqVXpkRjlQUnpOcWQxTlljMUozWm1OZlZWVnFZbTlPWjFwaGNtdEJSMmxZTUdwblRTSXNJbFZ6WlhKSlJDSTZJakVpTENKVmMyVnlibUZ0WlNJNkltaHZjM1JsWkY5aGFTSXNJbEJ5YjJwbFkzUkpSQ0k2SWlJc0lsSnZiR1ZKUkNJNkltRmtiV2x1SWl3aVVtVnhkV1Z6ZEVsRUlqb2ljbVZ4TFdFeFpUQXhZekpqTFdJME5tRXRORFJqTUMwNE16WXdMVFZsTlRsak1HSTJOelZsTXlJc0lrVjRjR2x5WlhOQmRDSTZJakF3TURFdE1ERXRNREZVTURBNk1EQTZNREJhSW4wPXzdhcRS0pSp1R2FpxCdoZMt4dWj3oP6rhB4cwJYuh3UDQ==
+  ~: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "pod_name" : "",
+      "pool_subscription_id" : {{pool_subscription_id}},
+      "pod_action" : "stop"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl 'https://admin9.hostedai.dev/api/recipes/templates/27' \
+    -H 'Accept: application/json' \
+    -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+    -H 'Access-Control-Allow-Origin: *' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOiJ7XCJUb2tlblwiOlwiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SlZjMlZ5U1dRaU9qRjkuVmNwMmdyWjUzdF9PRzNqd1NYc1J3ZmNfVVVqYm9OZ1phcmtBR2lYMGpnTVwiLFwiVXNlcklEXCI6XCIxXCIsXCJVc2VybmFtZVwiOlwiaG9zdGVkX2FpXCIsXCJQcm9qZWN0SURcIjpcIlwiLFwiUm9sZUlEXCI6XCJhZG1pblwiLFwiUmVxdWVzdElEXCI6XCJyZXEtYTFlMDFjMmMtYjQ2YS00NGMwLTgzNjAtNWU1OWMwYjY3NWUzXCIsXCJFeHBpcmVzQXRcIjpcIjIwMjUtMDUtMDdUMTI6NTE6MDUuODQ0ODc5NTI3WlwifSIsImV4cCI6MTc0NjYyMjI2NX0.5jLDQetLyVjcp-hrdWT13yhu7UPK6gh5Lo9w-VAxoa4' \
+    -H 'Cache-Control: no-cache' \
+    -H 'Connection: keep-alive' \
+    -H 'Content-Type: application/json' \
+    -b 'sim2_session=MTc0NjYxODY2NXxEWDhFQVFMX2dBQUJFQUVRQUFELUFTX19nQUFCQm5OMGNtbHVad3dJQUFaamJHbGxiblFHYzNSeWFXNW5EUDRCRHdELUFRdDdJbFJ2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBKVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbzVMbVY1U2xaak1sWjVVMWRSYVU5cVJqa3VWbU53TW1keVdqVXpkRjlQUnpOcWQxTlljMUozWm1OZlZWVnFZbTlPWjFwaGNtdEJSMmxZTUdwblRTSXNJbFZ6WlhKSlJDSTZJakVpTENKVmMyVnlibUZ0WlNJNkltaHZjM1JsWkY5aGFTSXNJbEJ5YjJwbFkzUkpSQ0k2SWlJc0lsSnZiR1ZKUkNJNkltRmtiV2x1SWl3aVVtVnhkV1Z6ZEVsRUlqb2ljbVZ4TFdFeFpUQXhZekpqTFdJME5tRXRORFJqTUMwNE16WXdMVFZsTlRsak1HSTJOelZsTXlJc0lrVjRjR2x5WlhOQmRDSTZJakF3TURFdE1ERXRNREZVTURBNk1EQTZNREJhSW4wPXzdhcRS0pSp1R2FpxCdoZMt4dWj3oP6rhB4cwJYuh3UDQ==' \
+    -H 'Origin: https://admin9.hostedai.dev' \
+    -H 'Pragma: no-cache' \
+    -H 'Referer: https://admin9.hostedai.dev/app_library/27/step_builder' \
+    -H 'Sec-Fetch-Dest: empty' \
+    -H 'Sec-Fetch-Mode: cors' \
+    -H 'Sec-Fetch-Site: same-origin' \
+    -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    -H 'sec-ch-ua-platform: "macOS"' \
+    --data-raw '{"clusters_infrastructure":[],"execution_name":"ext_rec_3","inventory":"1ebc502a-9081-443f-9e57-edafee0de331","new_clusters_infrastructure":[],"playbook_execution_metadata":{"playbook_options":{"limit_hosts":"","extra_vars":{}}}}'
+}

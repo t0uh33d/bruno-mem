@@ -1,0 +1,21 @@
+meta {
+  name: login
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/service/i/create-instance
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      
+  }
+}
+
+settings {
+  encodeUrl: true
+}

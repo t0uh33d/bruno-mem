@@ -1,0 +1,19 @@
+meta {
+  name: delete an instance type
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{url}}/instance-type/d13553ca-0c9c-4fcc-b554-5cdb1eeddfea
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

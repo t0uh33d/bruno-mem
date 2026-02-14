@@ -1,0 +1,15 @@
+meta {
+  name: operation status - delerte
+  type: http
+  seq: 14
+}
+
+get {
+  url: http://localhost:8000/delete-service/status/{{operation_id}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

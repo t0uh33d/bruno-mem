@@ -1,0 +1,60 @@
+meta {
+  name: Disable a service
+  type: http
+  seq: 18
+}
+
+put {
+  url: {{url}}/service/180f1f82-fd45-45c8-9e4b-5eabac26bd24/disable
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "2f458ff4-2e7c-4607-a027-4809e6aa3ea5",
+    "name": "cPanel",
+    "description": "cPanel is great, please use it.",
+    "service_type": "cpu_only",
+    "recipe_id": null,
+    "instance_config_id": "aa24aeb8-ca00-4e6e-85be-7f29fd3e87cc",
+    "gpu_config_id": null,
+    "is_chargeable": false,
+    "is_system_defined": false,
+    "is_enabled": true,
+    "instance_config": {
+      "id": "aa24aeb8-ca00-4e6e-85be-7f29fd3e87cc",
+      "default_storage_block_id": null,
+      "default_image_id": null,
+      "instance_type_locked": false,
+      "storage_block_locked": false,
+      "image_locked": false,
+      "auto_assign_network": "private",
+      "additional_disk": "both",
+      "storage_block": null,
+      "compatible_distros": [
+        "debian"
+      ]
+    //  ,
+    //  "incompatible_images": {
+    //    "debian": [
+    //      "e530d47924396d00e3ef3cd70c8bc47c6d82a60e"
+    //    ]
+    //  }
+    },
+    "gpu_config": null
+  }
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

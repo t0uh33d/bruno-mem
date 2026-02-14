@@ -1,0 +1,31 @@
+meta {
+  name: Unassign a service from scenario
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/scenario/unassign-service
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "scenario_id": "6d422bdb-3757-4453-b124-4dabb5cb1cf5",
+      "service_id": "2f458ff4-2e7c-4607-a027-4809e6aa3ea5"
+  }
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

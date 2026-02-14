@@ -1,0 +1,27 @@
+meta {
+  name: add a storage block
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/storage-blocks
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name": "Test block",
+      "description": "Maximum block size for large-scale applications with intensive data storage requirements.",
+      "size_in_gb": 90
+  }
+}
+
+settings {
+  encodeUrl: true
+}

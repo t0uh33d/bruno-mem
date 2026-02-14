@@ -1,0 +1,19 @@
+meta {
+  name: Set a default policy for a type
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/policy/{{policy_type}}/set-default/2678f8ac-185e-486a-a8d4-d059a50009e1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

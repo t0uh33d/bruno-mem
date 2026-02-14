@@ -1,0 +1,57 @@
+meta {
+  name: Get all services
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{url}}/service
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~sort: created_at
+  ~order: desc
+  ~per_page: 10
+  ~page: 0
+  ~name[eqstr]: cPanel
+  ~service_type[eqstr]: cpu_gpu_card
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "scenarios" : ["05457d6e-6753-42e7-994f-8b25f1250b2c","0a3a6545-2fce-4d2c-bd07-ebfe69c760f8","18e55a18-b130-48b0-8136-8de925421957"],
+      "name": "cPanel 6",
+      "description": "cPanel 4 is great, please use it more.",
+      "service_type": "cpu_only",
+      "instance_config": {
+          "default_instance_type_id": "59cd67eb-4b3c-4948-bbbf-cd77c1ee7f2f",
+          "instance_type_locked": true,
+          "image_locked": false,
+          "auto_assign_network": "public",
+          "additional_disk": "both",
+          "compatible_distros": [
+              "debian"
+          ],
+          "incompatible_images": {
+              "debian": [
+                  "e530d47924396d00e3ef3cd70c8bc47c6d82a60e"
+              ]
+          }
+      }
+  }
+}
+
+script:post-response {
+  // // const response = pm.response.text()['token'];
+  // // pm.environment.set('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

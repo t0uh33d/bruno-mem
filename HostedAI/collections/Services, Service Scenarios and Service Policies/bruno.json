@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Services, Service Scenarios and Service Policies",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Get scenario details by id
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/scenario/8598f32c-f9cd-4624-8685-6cb9f137456f
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

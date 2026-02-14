@@ -1,0 +1,26 @@
+meta {
+  name: add storage block to an instance type
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/instance-type/add-storage-block
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "instance_type_id" : "5240bff2-6e72-4cd7-aad8-eabd2a19e653",
+      "storage_block_id" : "7a6ae91e-8dbd-471f-8a1c-a8828e9e3646"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

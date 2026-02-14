@@ -1,0 +1,32 @@
+meta {
+  name: Create a scanrio
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/scenario
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+     {
+      "name": "Cloud Instances",
+      "description": "CPU Only",
+      "services": [
+        {
+          "service_id" : "e298495d-c8e3-4e9b-ace5-5c40779d8f6f",
+          "order" : 1
+        }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

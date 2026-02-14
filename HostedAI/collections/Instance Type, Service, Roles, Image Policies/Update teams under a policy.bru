@@ -1,0 +1,26 @@
+meta {
+  name: Update teams under a policy
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{url}}/policy/{{policy_type}}/update-teams
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "teams" : ["58ae5927-6cc6-4002-af39-4f9c14fdcfd5"],
+      "policy_id" : "1cc3d938-d8d6-4e78-9225-d4be65d02745"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

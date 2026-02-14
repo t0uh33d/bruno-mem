@@ -1,0 +1,26 @@
+meta {
+  name: pod status ex
+  type: http
+  seq: 21
+}
+
+get {
+  url: {{adminURL}}/pods/status?team_id={{team_id}}&worker_id={{worker_id}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  team_id: {{team_id}}
+  worker_id: {{worker_id}}
+  ~pool_id: {{pool_id}}
+  ~image_uuid: dc6b43aa-73c2-4b10-9c59-12481319e933
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

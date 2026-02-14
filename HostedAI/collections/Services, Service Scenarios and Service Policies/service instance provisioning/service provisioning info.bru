@@ -1,0 +1,25 @@
+meta {
+  name: service provisioning info
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/service/i/provisioning-info?service_id={{service_id}}&team_id={{team_id}}&region_id={{region_id}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  team_id: {{team_id}}
+  region_id: {{region_id}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

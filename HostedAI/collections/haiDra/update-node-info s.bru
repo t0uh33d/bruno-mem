@@ -1,0 +1,30 @@
+meta {
+  name: update-node-info s
+  type: http
+  seq: 13
+}
+
+post {
+  url: http://localhost:8000/update-node-info
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "hostname" : "gpuworker9",
+      "node_ip" : "34.106.63.83",
+      "gateway_ip" : "10.180.0.26",
+      "is_controller" : true
+  }
+}
+
+script:post-response {
+  const response = res.getBody().operation_id;
+  bru.setEnvVar('operation_id', response);
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,15 @@
+meta {
+  name: get pod usage of a pool
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8000/pod_usage/{{pool_name}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,45 @@
+meta {
+  name: provision pod
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{adminURL}}/pods/provision
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~requested_gpu_count: 1
+  ~model_id: 0x1e13
+  ~pool_id: 3
+  ~image_hash: 37191266f9cad5651a92a4b56d8a03bb072bb27d768663e0fc9b6c7ecdfa0a11
+  ~instance_type: 3821e2f0-1830-4787-9570-f3d91bfc396a
+  ~storage_block_id: 3821e2f0-1830-4787-9570-f3d91bfc396a
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "pool_id" : {{pool_id}},
+      "team_id" : "{{team_id}}",
+      "vgpus" : 1,
+      "vcpus" : 4,
+      "memory_mb" : 8192,
+      "ephemeral_storage_gb" : 50,
+      "image_uuid" : "dc6b43aa-73c2-4b10-9c59-12481319e933",
+      "worker_id" : "i-ce9c2b0e-3c8c-4bf5-b1e7-0c1b5bda5c02",
+      "recipe_id" : 27,
+      "recipe_scope" : "first-boot"
+  }
+  
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,25 @@
+meta {
+  name: instances unified
+  type: http
+  seq: 23
+}
+
+get {
+  url: {{local}}/instances/unified?per_page=3&page=0
+  body: none
+  auth: bearer
+}
+
+params:query {
+  per_page: 3
+  page: 0
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

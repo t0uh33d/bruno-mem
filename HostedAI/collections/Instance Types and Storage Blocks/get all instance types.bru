@@ -1,0 +1,23 @@
+meta {
+  name: get all instance types
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{url}}/instance-type?is_available[eqstr]=true
+  body: none
+  auth: bearer
+}
+
+params:query {
+  is_available[eqstr]: true
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

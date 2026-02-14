@@ -1,0 +1,30 @@
+meta {
+  name: compatible networks
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{local}}/service/i/compatible-networks?service_id={{service_id}}&team_id={{team_id}}&region_id={{region_id}}&requested_gpu_count=1&model_id={{model_id}}&image_hash={{has}}&instance_type={{instance_type}}&storage_block_id={{storage_block}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  team_id: {{team_id}}
+  region_id: {{region_id}}
+  requested_gpu_count: 1
+  model_id: {{model_id}}
+  image_hash: {{has}}
+  instance_type: {{instance_type}}
+  storage_block_id: {{storage_block}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

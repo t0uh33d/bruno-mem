@@ -1,0 +1,55 @@
+meta {
+  name: Edit a scenario
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{url}}/scenario/44e94e4d-e397-475b-ba85-f5f241b8139c
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name": "1-Click Apps",
+      "description": "Curated Apps ready to deploy and get you working in no time!",
+      "services" : [
+          {
+           "service_id" : "d89f7f3c-5c18-4892-ae0f-9599f24f4f45",
+           "order" : 1
+         },
+          {
+           "service_id" : "72abd7e7-5125-47be-830e-1547cc977497",
+           "order" : 2
+         },
+          {
+           "service_id" : "8fb3652a-6a96-45be-afda-bfc60e485e83",
+           "order" : 3
+         },
+          {
+           "service_id" : "4cf5a29e-4721-4a7b-b477-91b94780db7f",
+           "order" : 4
+         },
+          {
+           "service_id" : "9fa84f22-e498-4cbc-8a85-fab1cd0f6b96",
+           "order" : 5
+         }
+      ]
+  }
+  
+  
+}
+
+script:post-response {
+  const response = JSON.stringify(res.getBody())['token'];
+  bru.setEnvVar('token', response);
+}
+
+settings {
+  encodeUrl: true
+}

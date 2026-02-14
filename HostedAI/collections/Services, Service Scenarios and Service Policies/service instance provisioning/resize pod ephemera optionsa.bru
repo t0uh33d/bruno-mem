@@ -1,0 +1,29 @@
+meta {
+  name: resize pod ephemera optionsa
+  type: http
+  seq: 31
+}
+
+get {
+  url: {{local}}/pods/{{worker_id}}/resize/ephemeral-storage/options
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "target_instance_type_id" : "96e374b1-8553-4cc3-883b-c0d137ea8a5a"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

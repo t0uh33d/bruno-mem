@@ -1,0 +1,31 @@
+meta {
+  name: pod exposed services Copy
+  type: http
+  seq: 26
+}
+
+post {
+  url: {{url}}/pods/volume-action
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "pod_name" : "{{worker_id}}",
+      "action" : "attach_volume",
+      "volumes" : [17]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

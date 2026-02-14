@@ -1,0 +1,19 @@
+meta {
+  name: service image serve
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/service/image/9f8125ab-57a3-4d28-8724-c92b336fcc05
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

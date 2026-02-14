@@ -1,0 +1,25 @@
+meta {
+  name: gpu pool listing
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{local}}/service/i/compatible-gpu-pools?service_id={{service_id}}&team_id={{team_id}}&region_id={{region_id}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  team_id: {{team_id}}
+  region_id: {{region_id}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

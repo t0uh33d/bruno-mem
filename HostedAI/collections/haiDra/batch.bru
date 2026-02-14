@@ -1,0 +1,25 @@
+meta {
+  name: batch
+  type: http
+  seq: 15
+}
+
+post {
+  url: http://localhost:8000/max_deployable_vgpus/batch
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "pool_names" : ["{{pool_name}}"],
+      "min_ram_mb" : 1,
+      "min_storage_mb" : 1,
+      "min_cpu_cores" : 1,
+      "team_id" : "b78c1de7-6899-40bd-a90f-35568f4805a7"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,78 @@
+name: user14
+variables:
+  - name: url
+    value: ""
+  - name: token
+    value: ""
+  - name: adminURL
+    value: ""
+  - name: clusterURL
+    value: ""
+  - name: adminToken
+    value: ""
+  - name: clusterToken
+    value: ""
+  - name: gpuaas_node_id
+    value: "13"
+  - name: scan_id
+    value: ""
+  - name: adminPassword
+    value: ""
+  - name: gpuaas_id
+    value: ""
+  - name: userPassword
+    value: ""
+  - name: team_id
+    value: 67ba3b4c-e6ed-44b1-a09d-b7c32e2b829c
+  - name: cluster_id
+    value: ""
+  - name: region_id
+    value: ""
+  - name: resource_policy_id
+    value: e9a10a23-b51b-4860-936d-af45a5365e18
+  - name: service_id
+    value: fc6aceb2-4e5f-4712-8b70-66c470d154a9
+  - name: pool_id
+    value: "3"
+  - name: gpuaas_sub_id
+    value: "20"
+  - name: storage_block_id
+    value: ""
+  - name: policy_type
+    value: ""
+  - name: pool_name
+    value: ""
+  - name: pod_name
+    value: ""
+  - name: tail_lines
+    value: ""
+  - name: pool_subscription_id
+    value: ""
+  - name: local
+    value: ""
+  - name: requested_vgpus
+    value: ""
+  - name: ifb_subscription_id
+    value: ""
+  - name: image_uuid
+    value: ""
+  - name: operation_id
+    value: ""
+  - name: service_name
+    value: ""
+  - name: pod_service_id
+    value: ""
+  - name: service_type
+    value: ""
+  - name: scenario_id
+    value: ""
+  - name: has
+    value: ""
+  - name: instance_type
+    value: ""
+  - name: storage_block
+    value: ""
+  - name: workspace
+    value: ""
+  - name: model_id
+    value: ""

@@ -1,0 +1,29 @@
+meta {
+  name: image listing
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{local}}/service/i/compatible-images?service_id={{service_id}}&team_id={{team_id}}&region_id={{region_id}}&requested_gpu_count=1&pool_id=1&model_id={{model_id}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  service_id: {{service_id}}
+  team_id: {{team_id}}
+  region_id: {{region_id}}
+  requested_gpu_count: 1
+  pool_id: 1
+  model_id: {{model_id}}
+  ~model_id: 0x1e13
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

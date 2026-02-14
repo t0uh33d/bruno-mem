@@ -1,0 +1,26 @@
+meta {
+  name: pod extinfo
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{adminURL}}/pods/extract-info?pool_id={{pool_id}}&team_id={{team_id}}&worker_id={{worker_id}}&image_uuid=dc6b43aa-73c2-4b10-9c59-12481319e933
+  body: json
+  auth: bearer
+}
+
+params:query {
+  pool_id: {{pool_id}}
+  team_id: {{team_id}}
+  worker_id: {{worker_id}}
+  image_uuid: dc6b43aa-73c2-4b10-9c59-12481319e933
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

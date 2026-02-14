@@ -1,0 +1,23 @@
+meta {
+  name: team accessible regions
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/service/i/team-accessible-regions?team_id={{team_id}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  team_id: {{team_id}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

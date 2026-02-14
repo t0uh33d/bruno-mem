@@ -1,0 +1,23 @@
+meta {
+  name: unified instance by id
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{local}}/instances/unified/i-24d8cb59-e0fe-4985-91e5-901d346d8266
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~team_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

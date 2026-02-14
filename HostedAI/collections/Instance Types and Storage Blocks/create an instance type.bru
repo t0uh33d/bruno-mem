@@ -1,0 +1,30 @@
+meta {
+  name: create an instance type
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/instance-type
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+          "name": "Nano.Storage.Block.Test",
+          "description": "Suitable for very lightweight workloads or basic services.",
+          "memory_mb": 1024,
+          "vcpus": 1,
+          "default_storage_block_id" : "c6bb7f99-9508-419c-af76-3e0ec7fbb339",
+     		"storage_blocks" : ["c6bb7f99-9508-419c-af76-3e0ec7fbb339"]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

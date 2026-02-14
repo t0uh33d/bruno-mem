@@ -1,0 +1,19 @@
+meta {
+  name: get storage block details
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/storage-blocks/58d35894-cdf4-4a89-8d8a-2aaed31953b7
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

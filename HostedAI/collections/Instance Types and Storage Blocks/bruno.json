@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Instance Types and Storage Blocks",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

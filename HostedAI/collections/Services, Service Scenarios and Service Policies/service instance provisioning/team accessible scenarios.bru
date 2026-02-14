@@ -1,0 +1,23 @@
+meta {
+  name: team accessible scenarios
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/service/i/team-accessible-scenarios?team_id={{team_id}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  team_id: {{team_id}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}
